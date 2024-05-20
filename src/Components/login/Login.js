@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './Login.css';
 import { useNavigate } from 'react-router-dom';
+import style from './Login.module.css';
 
 
 
@@ -28,24 +28,36 @@ const Login = ({ setLogin }) => {
 
 
     return (
-        <div className='background-image'>
-            <div class="login-box">
+        <div className={style.background_image}>
+            <div class={style.login_box}>
                 <div>
-                    <img src="./assets/Logo.jpg" alt="" />
+                    <img src="./assets/Logo.jpg" alt="" className={style.img} />
                 </div>
                 <form onSubmit={formSubmitter}>
                     {errorMessage.length > 0 && <div style={{ marginBottom: '10px', color: 'red', marginLeft: '30px' }}>{errorMessage}</div>}
-                    <div class="user-box">
-                        <input type="text" name="email" required="" onChange={handleChange} placeholder='Username' />
+                    <div class={style.user_box}>
+                        <input
+                            type="text"
+                            name="email"
+                            required=""
+                            onChange={handleChange}
+                            placeholder='Username'
+                            className={style.input} />
                     </div>
-                    <div class="user-box">
-                        <input type="password" name="password" required="" onChange={handleChange} placeholder='Password' />
+                    <div class={style.user_box}>
+                        <input
+                            type="password"
+                            name="password"
+                            required=""
+                            onChange={handleChange}
+                            placeholder='Password'
+                            className={style.input} />
                     </div>
                     <div >
                         <button>Login</button>
                     </div>
                     <div >
-                        <a href="#" className='a'>Forgot password?</a>
+                        <a href="#" className={style.a}>Forgot password?</a>
                     </div>
                 </form>
             </div>
