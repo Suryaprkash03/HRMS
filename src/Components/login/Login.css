@@ -61,7 +61,7 @@ img {
     margin-top: -40px;
 }
 .background-image {
-    background-image: url('../../public/assets/bg1.svg');
+    background-image: url('../../../public/assets/bg1.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
