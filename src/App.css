@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+.background-image {
+  background-image: url('../public/assets/bg1.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+
+}
