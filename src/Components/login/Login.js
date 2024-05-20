@@ -1,6 +1,7 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
+import style from './Login.module.css';
 import DataContext from '../../context/DataContext';
 
 const Login = () => {
@@ -29,26 +30,22 @@ const Login = () => {
 
     return (
         <div className='background-image'>
-            <div className="login-box">
+            <div class="login-box">
                 <div>
-                    <img src="./assets/Logo.jpg" alt="Logo" />
+                    <img src="./assets/Logo.jpg" alt="" />
                 </div>
                 <form onSubmit={formSubmitter}>
-                    {errorMessage.length > 0 && (
-                        <div style={{ marginBottom: '10px', color: 'red', marginLeft: '30px' }}>
-                            {errorMessage}
-                        </div>
-                    )}
-                    <div className="user-box">
-                        <input type="text" name="email" required onChange={handleChange} placeholder='Username' />
+                    {errorMessage.length > 0 && <div style={{ marginBottom: '10px', color: 'red', marginLeft: '30px' }}>{errorMessage}</div>}
+                    <div class="user-box">
+                        <input type="text" name="email" required="" onChange={handleChange} placeholder='Username' />
                     </div>
-                    <div className="user-box">
-                        <input type="password" name="password" required onChange={handleChange} placeholder='Password' />
+                    <div class="user-box">
+                        <input type="password" name="password" required="" onChange={handleChange} placeholder='Password' />
                     </div>
                     <div>
                         <button type="submit">Login</button>
                     </div>
-                    <div>
+                    <div >
                         <a href="#" className='a'>Forgot password?</a>
                     </div>
                 </form>

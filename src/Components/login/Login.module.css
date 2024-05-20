@@ -1,4 +1,4 @@
-.login-box {
+.login_box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -11,12 +11,12 @@
     border-radius: 30px;
 }
 
-.login-box .user-box {
+.login-box .user_box {
     position: relative;
     margin-bottom: 20px;
 }
 
-.login-box .user-box input {
+.input {
     width: 83%;
     padding: 10px 0;
     font-size: 16px;
@@ -29,11 +29,11 @@
 }
 
 
-.login-box button {
+.login_box button {
     border: none;
     padding: 10px;
     width: 25%;
-    height: 40px;
+    height: 30px;
     color: #ede9e9;
     cursor: pointer;
     outline: none;
@@ -48,19 +48,20 @@
 div .a {
     color: #525252;
     text-decoration: none;
-    margin-left: 145px;
+    margin-left: 165px;
     font-size: 15px;
     font-weight: 600;
 }
 
-img {
+.img {
     width: 70%;
     height: 170px;
-    margin-left: 55px;
+    margin-left: 60px;
     margin-bottom: 30px;
     margin-top: -40px;
 }
-.background-image {
+
+.background_image {
     background-image: url('../../../public/assets/bg1.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -69,5 +70,5 @@ img {
     width: 100%;
     position: absolute;
     z-index: -1;
-  
-  }
+
+}
