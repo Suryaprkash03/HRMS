@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import style from "./sidebar.module.css";
 import { Link, useLocation } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
+import DataContext from '../../context/DataContext';
 const SideBar = () => {
     const location = useLocation()
+    const navigate = useNavigate()
+    const {login, setLogin} = useContext(DataContext)
+    const handleLogout = (e) =>{
+        if(e.target.innerText == "Logout") {
+            setLogin(true)
+            navigate('/Login')
+        }
+    }
     const elements = [
         {
             id: 1,
@@ -53,43 +62,51 @@ const SideBar = () => {
             active: false,
             viewBox: "0 0 256 256",
             svgPath: ["M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z"]
+        },
+        {
+            id: 8,
+            name: "Logout",
+            active: false,
+            viewBox: "0 0 24 24 ",
+            svgPath: ["M5 22C4.44772 22 4 21.5523 4 21V3C4 2.44772 4.44772 2 5 2H19C19.5523 2 20 2.44772 20 3V6H18V4H6V20H18V18H20V21C20 21.5523 19.5523 22 19 22H5ZM18 16V13H11V11H18V8L23 12L18 16Z"]
         }
     ];
 
     return (
         <div className={style.outerContainer}>
             {elements.map(item => (
-                <Link to={`/${item.name}`} style={{ textDecoration: "none", color: "inherit" }}>
-
-                    <div key={item.id} className={style.itemContainer}>
-                        {location.pathname === '/' + item.name ? item.active = true : false}
-                        <div className={style.itemIcon}>
-                            <svg
-                                stroke="currentColor"
-                                fill={item.active ? "url(#grad1)" : 'rgb(103, 103, 103)'}
-                                strokeWidth="0"
-                                viewBox={item.viewBox}
-                                height="18px"
-                                width="18px"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <defs>
-                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" style={{ stopColor: 'hsla(190, 68%, 50%, 1)', stopOpacity: 1 }} />
-                                        <stop offset="100%" style={{ stopColor: 'hsla(239, 34%, 47%, 1)', stopOpacity: 1 }} />
-                                    </linearGradient>
-                                </defs>
-                                {item.svgPath.map((path, index) => (
-                                    <path key={index} d={path}></path>
-                                ))}
-                            </svg>
+                <>
+                    <Link to={item.name === "Logout" ? null : `/${item.name}`} style={{ textDecoration: "none", color: "inherit" }} >
+                        <div key={item.id} className={style.itemContainer} onClick={item.name == "Logout" ? handleLogout : console.log('')}>
+                            {location.pathname === '/' + item.name ? item.active = true : false}
+                            <div className={style.itemIcon}>
+                                <svg
+                                    stroke="currentColor"
+                                    fill={item.active ? "url(#grad1)" : 'rgb(103, 103, 103)'}
+                                    strokeWidth="0"
+                                    viewBox={item.viewBox}
+                                    height="18px"
+                                    width="18px"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <defs>
+                                        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style={{ stopColor: 'hsla(190, 68%, 50%, 1)', stopOpacity: 1 }} />
+                                            <stop offset="100%" style={{ stopColor: 'hsla(239, 34%, 47%, 1)', stopOpacity: 1 }} />
+                                        </linearGradient>
+                                    </defs>
+                                    {item.svgPath.map((path, index) => (
+                                        <path key={index} d={path}></path>
+                                    ))}
+                                </svg>
+                            </div>
+                            <p className={`${style.itemText} ps-2 ${item.active ? style.activeText : ''}`}>
+                                {item.name}
+                            </p>
+                            {item.active && <div className={style.activeBar}></div>}
                         </div>
-                        <p className={`${style.itemText} ps-2 ${item.active ? style.activeText : ''}`}>
-                            {item.name}
-                        </p>
-                        {item.active && <div className={style.activeBar}></div>}
-                    </div>
-                </Link>
+                    </Link>
+                </>
 
             ))
             }

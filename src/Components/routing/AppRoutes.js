@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import App from '../../App';
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path='/' element={<div>Login Page</div>} />
+            <Route path='/' element={<App />} />
             <Route path='/Home'>
                 <Route index element={<div>Home Page</div>} />                
             </Route>
