@@ -1,12 +1,12 @@
 .searchbar {
     width: 76%;
     padding: 15px;
-    background-color: #edf6f3;
+    background-color:rgba(172, 229, 241, 0.447);
     border-radius: 10px;
     border: none;
     outline: none;
-    font-size: 15px;
-    color: #4e4e4e;
+    font-size: 16px;
+    color: #313131;
     padding-left: 40px;
 }
 
@@ -28,17 +28,16 @@
 }
 
 .table tbody>tr:nth-of-type(odd)>* {
-    background-color: hsl(0, 9%, 98%);
+    background:linear-gradient(rgba(188, 244, 255, 0.447),rgba(172, 174, 255, 0.411));
     text-align: center;
     padding: 10px;
-    border-bottom: 9px solid   #e8e8e8;
+    border-bottom: 9px solid #f1f1f1;
 
 }
 
 .table tbody>tr:nth-of-type(even)>* {
-    background-color: #ecfff8;
-    text-align: center;
-    border-bottom: 9px solid  #e8e8e8 ;
+    background:linear-gradient(rgba(188, 244, 255, 0.447),rgba(172, 174, 255, 0.411));    text-align: center;
+    border-bottom: 9px solid  #f1f1f1;
     padding: 10px;
 }
 
@@ -53,7 +52,7 @@
 }
 
 .searchIcon {
-    color: #bdbdbd;
+    color: #5c5c5c;
     position: absolute;
     margin-top: 65px;
     margin-left: -40px;
