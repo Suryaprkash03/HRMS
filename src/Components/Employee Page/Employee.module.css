@@ -1,0 +1,96 @@
+.searchbar {
+    width: 76%;
+    padding: 15px;
+    background-color: #edf6f3;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #4e4e4e;
+    padding-left: 40px;
+}
+
+.searchbar {
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.table {
+    caption-side: bottom;
+    border-collapse: collapse;
+    width: 80%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    z-index: -999;
+    margin-left: 100px;
+    margin-top: 50px;
+
+}
+
+.table tbody>tr:nth-of-type(odd)>* {
+    background-color: hsl(0, 9%, 98%);
+    text-align: center;
+    padding: 10px;
+    border-bottom: 9px solid   #e8e8e8;
+
+}
+
+.table tbody>tr:nth-of-type(even)>* {
+    background-color: #ecfff8;
+    text-align: center;
+    border-bottom: 9px solid  #e8e8e8 ;
+    padding: 10px;
+}
+
+.table thead {
+    color: black;
+    text-align: center;
+}
+
+.table thead tr th {
+    padding-bottom: 30px;
+
+}
+
+.searchIcon {
+    color: #bdbdbd;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: -40px;
+    font-size: 17px;
+}
+
+/* .table tbody>.trow td:nth-child(even) {
+    border-right: 2px solid rgb(98, 98, 98);
+    border-left: 2px solid rgb(98, 98, 98);
+} */
+.jt {
+    color: black;
+    font-weight: bold;
+}
+
+.salary {
+    color: rgb(51, 184, 255);
+}
+
+.hd {
+    color: #8c8c8c;
+
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.table tbody .trow td:first-child {
+    text-align: justify;
+}
+.ename
+{
+    color: #919191;
+}
+

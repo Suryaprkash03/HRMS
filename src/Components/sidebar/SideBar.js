@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import style from "./sidebar.module.css";
-import { Link, useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import DataContext from '../../context/DataContext';
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import DataContext from '../../context/DataContext';
+import style from "./sidebar.module.css";
 
 const SideBar = ({ isOpen, toggleSidebar }) => {
     const location = useLocation();

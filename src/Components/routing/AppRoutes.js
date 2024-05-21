@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import App from '../../App';
+import EmployeeTable from '../Employee Page/EmployeeTable';
 import Home from '../home/Home';
 const AppRoutes = () => {
     return (
@@ -10,7 +11,7 @@ const AppRoutes = () => {
                 <Route index element={<Home />} />                
             </Route>
             <Route path='/Employees'>
-                <Route index element={<div>Employees Page</div>} />                
+                <Route index element={<EmployeeTable/>} />                
             </Route>
         </Routes>
     );
