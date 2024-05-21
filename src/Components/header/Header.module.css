@@ -1,10 +1,10 @@
 /* src/Header.module.css */
 .container {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 45px;
+    height: 40px;
     box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 25px 1px;
     position: fixed;
     right: 0px;
@@ -119,6 +119,9 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .container{
+        height: 50px;
+    }
     .logo {
         margin-bottom: 10px;
     }
