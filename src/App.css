@@ -1,0 +1,37 @@
+.App {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .main-container {
+    display: flex;
+    flex: 1;
+  }
+  
+  .content {
+    margin-top: 45px;
+    flex-grow: 1;
+    margin-left: 250px;
+    transition: margin-left 0.3s;
+  }
+  
+  .sidebar-open .content {
+    margin-left: 150px;
+  }
+  
+  .sidebar-closed .content {
+    margin-left: 60px;
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      margin-left: 60px;
+    }
+  }
+  

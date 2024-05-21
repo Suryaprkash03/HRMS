@@ -1,21 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Login from './Components/login/Login';
 import SideBar from './Components/sidebar/SideBar';
 import AppRoutes from './Components/routing/AppRoutes';
 import DataContext, { DataProvider } from './context/DataContext';
+import Header from './Components/header/Header';
+import './App.css'; // Import the CSS for styling
 
 function App() {
   const { login, setLogin } = useContext(DataContext);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   return (
-    <div className="App">
-      {login ? (
+    <div className={`App ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+      {!login ? (
         <Login setLogin={setLogin} />
       ) : (
-        <div className="row">
-          <SideBar />
-          <div style={{ position: "relative", left: 155, width: 'auto' }}>
-            <AppRoutes />
+        <div className="app-container">
+          <Header toggleSidebar={toggleSidebar} />
+          <div className="main-container">
+            <SideBar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+            <div className="content">
+              <AppRoutes />
+            </div>
           </div>
         </div>
       )}
@@ -25,7 +36,7 @@ function App() {
 
 const AppWrapper = () => (
   <DataProvider>
-    <App />
+      <App />
   </DataProvider>
 );
 

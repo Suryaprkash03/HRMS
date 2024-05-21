@@ -1,33 +1,75 @@
-.outerContainer{
+.outerContainer {
     padding-top: 20px;
     width: 150px;
     height: 100vh;
     position: fixed;
-    box-shadow:  rgba(0, 0, 0, 0.33) 1cap 0px 25px 1px;
+    box-shadow: rgba(0, 0, 0, 0.33) 1px 0px 25px 1px;
     border-right: 2px solid rgb(180, 180, 180);
-    z-index: 999;
-}
-.itemText{
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+  }
+  
+  .closed {
+    width: 60px;
+  }
+  
+  .open {
+    width: 150px;
+  }
+  
+  .toggleButton {
+    display: flex;
+    position: fixed;
+    top: 11px;
+    left: 8px;
+    z-index: 1000;
+  }
+  
+  .toggleButton button {
+    background-color: white;
+    border: 0px;
+    color: gray;
+  }
+  
+  .toggleButton button svg {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .itemText {
     display: inline;
     font-size: 0.76rem;
     color: rgb(103, 103, 103);
     font-weight: 500;
-}
-.itemContainer{
-   margin-bottom: 18px;
-   margin-left: 30px;
-   display: flex;
-   align-items: center;
-   cursor: pointer;
-}
-.itemIcon{
-    color: rgb(32, 75, 122) ;
-}
-.activeText{
+    transition: opacity 0.3s ease;
+  }
+  
+  .closed .itemText {
+    opacity: 0;
+  }
+  
+  .itemContainer {
+    margin-bottom: 18px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .itemContainer:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .itemIcon {
+    color: rgb(32, 75, 122);
+  }
+  
+  .activeText {
     color: black;
     font-weight: 500;
-}
-.activeBar{
+  }
+  
+  .activeBar {
     background: linear-gradient(90deg, hsla(190, 68%, 50%, 1) 0%, hsla(239, 34%, 47%, 1) 100%);
     width: 5px;
     height: 20px;
@@ -35,4 +77,5 @@
     border-bottom-left-radius: 5px;
     position: absolute;
     right: 0px;
-}
+  }
+  

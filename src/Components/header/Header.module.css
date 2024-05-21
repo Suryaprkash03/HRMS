@@ -1,0 +1,117 @@
+/* Header.module.css */
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 45px;
+    box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 25px 1px;
+    position: fixed;
+    right: 0px;
+    z-index: 999;
+    background-color: white;
+}
+
+.logo {
+    min-width: 100px;
+}
+
+.logoImg {
+    padding-left: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+}
+
+.searchbox {
+    display: flex;
+    align-items: center;
+    width: 700px;
+}
+
+.searchbox input {
+    width: 95%;
+    outline: none;
+    border: none;
+}
+
+.alerts, .mail {
+    color: gray;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    width: 200px;
+}
+
+.dropdownButton {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.profileImage {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dropdownText {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.name {
+    margin: 0;
+    font-weight: 500;
+}
+
+.position {
+    margin: 0;
+    font-size: 12px;
+    color: grey;
+}
+
+.arrow {
+    font-size: 20px;
+}
+
+.dropdownContent {
+    display: block;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdownItem .profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}

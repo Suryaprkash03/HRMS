@@ -23,7 +23,7 @@ const Login = () => {
         if (input.email !== 'admin' || input.password !== 'saravanan') return setErrorMessage('Invalid email or password');
         else {
             navigate('/Home');
-            setLogin(false);
+            setLogin(true);
         }
     };
 
