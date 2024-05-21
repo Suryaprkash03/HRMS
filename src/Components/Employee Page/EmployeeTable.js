@@ -89,7 +89,7 @@ const EmployeeTable = () => {
                                 <img src={employee.profile} alt="employee" className={Style.profile} />
                                 {employee.employeeName}
                             </td>
-                            <td className={Style.jt}>{employee.jobTitle}</td><hr class={Style.vertical_line}/>
+                            <td className={Style.jt}>{employee.jobTitle}</td>
                             <td className={Style.salary}>{employee.salary}</td>
                             <td className={Style.hd}>{employee.hireDate}</td>
                             <td>{employee.contract}</td>
