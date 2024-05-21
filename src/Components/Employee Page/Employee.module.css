@@ -93,4 +93,16 @@
 {
     color: #919191;
 }
+td{
+    position: relative;
+}
 
+.line{
+    position: absolute;
+    top:20px;
+    right: 0px;
+    height: 22px;
+    width: 2px;
+    background-color:#919191;
+    z-index: 99999;
+}

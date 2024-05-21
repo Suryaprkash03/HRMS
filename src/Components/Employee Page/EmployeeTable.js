@@ -88,11 +88,16 @@ const EmployeeTable = () => {
                             <td className={Style.ename}>
                                 <img src={employee.profile} alt="employee" className={Style.profile} />
                                 {employee.employeeName}
+                                <div className={Style.line}></div>
                             </td>
-                            <td className={Style.jt}>{employee.jobTitle}</td>
-                            <td className={Style.salary}>{employee.salary}</td>
-                            <td className={Style.hd}>{employee.hireDate}</td>
-                            <td>{employee.contract}</td>
+                            <td className={Style.jt}>{employee.jobTitle}
+                                <div className={Style.line}></div></td>
+                            <td className={Style.salary}>{employee.salary}
+                                <div className={Style.line}></div></td>
+                            <td className={Style.hd}>{employee.hireDate}
+                                <div className={Style.line}></div></td>
+                            <td>{employee.contract}
+                            </td>
                         </tr>
                     ))}
                 </tbody>
