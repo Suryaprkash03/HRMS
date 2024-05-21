@@ -17,7 +17,7 @@
   .content {
     height: 100%;
     background-color: #f1f1f1;
-    margin-top: 45px;
+    margin-top: 55px;
     flex-grow: 1;
     margin-left: 250px;
     transition: margin-left 0.3s;
@@ -32,8 +32,11 @@
   }
   
   @media (max-width: 768px) {
+    /* html{
+      min-width: 300px;//for width auto 
+    } */
     .content {
-      margin-top: 55px;
+      margin-top: 75px;
       margin-left: 60px;
     }
   }

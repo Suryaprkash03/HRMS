@@ -9,7 +9,7 @@ import './App.css'; // Import the CSS for styling
 
 function App() {
   const { login, setLogin } = useContext(DataContext);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -21,7 +21,7 @@ function App() {
         <Login setLogin={setLogin} />
       ) : (
         <div className="app-container">
-          <Header toggleSidebar={toggleSidebar} />
+          <Header isOpen={!sidebarOpen} toggleSidebar={toggleSidebar} />
           <div className="main-container">
             <SideBar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
             <div className="content">
