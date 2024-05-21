@@ -1,3 +1,4 @@
+// src/Header.js
 import React, { useState } from 'react';
 import style from './Header.module.css';
 import { FaBell, FaSearch } from "react-icons/fa";

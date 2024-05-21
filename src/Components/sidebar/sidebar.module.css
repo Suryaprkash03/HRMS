@@ -1,12 +1,13 @@
 .outerContainer {
     padding-top: 20px;
     width: 150px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     box-shadow: rgba(0, 0, 0, 0.33) 1px 0px 25px 1px;
     border-right: 2px solid rgb(180, 180, 180);
     overflow-x: hidden;
     transition: width 0.3s ease;
+    background-color: white !important;
   }
   
   .closed {
@@ -19,10 +20,9 @@
   
   .toggleButton {
     display: flex;
-    position: fixed;
-    top: 11px;
-    left: 8px;
     z-index: 1000;
+    padding-left: 10px; 
+    padding-bottom: 10px;
   }
   
   .toggleButton button {
@@ -39,7 +39,7 @@
   .itemText {
     display: inline;
     font-size: 0.76rem;
-    color: rgb(103, 103, 103);
+    color: #3a3a3a;
     font-weight: 500;
     transition: opacity 0.3s ease;
   }
@@ -78,4 +78,8 @@
     position: absolute;
     right: 0px;
   }
-  
+  @media (max-width: 768px) {
+    .toggleButton {
+      padding-top: 30px;
+    }
+  }
