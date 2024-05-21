@@ -76,17 +76,26 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
         }
     ];
 
+
+    const logoutElement = {
+        id: 8,
+        name: "Logout",
+        active: false,
+        viewBox: "0 0 24 24 ",
+        svgPath: ["M5 22C4.44772 22 4 21.5523 4 21V3C4 2.44772 4.44772 2 5 2H19C19.5523 2 20 2.44772 20 3V6H18V4H6V20H18V18H20V21C20 21.5523 19.5523 22 19 22H5ZM18 16V13H11V11H18V8L23 12L18 16Z"]
+    };
+
     return (
-        <>
-            <div className={`${style.outerContainer} ${isOpen ? style.open : style.closed}`} style={{ paddingTop: 60 }}>
-                <div className={style.toggleButton}>
-                    <button onClick={toggleSidebar}>
-                        {isOpen ? <IoMdClose /> : <FaBars />}
-                    </button>
-                </div>
+        <div className={`${style.outerContainer} ${isOpen ? style.open : style.closed}`} style={{ paddingTop: 60 }}>
+            <div className={style.toggleButton}>
+                <button onClick={toggleSidebar}>
+                    {isOpen ? <IoMdClose /> : <FaBars />}
+                </button>
+            </div>
+            <div>
                 {elements.map(item => (
-                    <Link to={item.name === "Logout" ? null : `/${item.name}`} style={{ textDecoration: "none", color: "inherit" }} key={item.id}>
-                        <div className={style.itemContainer} onClick={item.name === "Logout" ? handleLogout : null}>
+                    <Link to={`/${item.name}`} style={{ textDecoration: "none", color: "inherit" }} key={item.id}>
+                        <div className={style.itemContainer}>
                             <div className={style.itemIcon}>
                                 <svg
                                     stroke="currentColor"
@@ -116,7 +125,35 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
                     </Link>
                 ))}
             </div>
-        </>
+            <div className={style.flexGrow}></div>
+            <div className={style.logoutContainer} onClick={handleLogout}>
+                <div className={style.itemIcon}>
+                    <svg
+                        stroke="currentColor"
+                        fill={location.pathname === '/Logout' ? "url(#grad1)" : '#3a3a3a'}
+                        strokeWidth="0"
+                        viewBox={logoutElement.viewBox}
+                        height="18px"
+                        width="18px"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style={{ stopColor: 'hsla(190, 68%, 50%, 1)', stopOpacity: 1 }} />
+                                <stop offset="100%" style={{ stopColor: 'hsla(239, 34%, 47%, 1)', stopOpacity: 1 }} />
+                            </linearGradient>
+                        </defs>
+                        {logoutElement.svgPath.map((path, index) => (
+                            <path key={index} d={path}></path>
+                        ))}
+                    </svg>
+                </div>
+                <p className={`${style.itemText} ps-2 ${location.pathname === '/Logout' ? style.activeText : ''}`}>
+                    {logoutElement.name}
+                </p>
+                {location.pathname === '/Logout' && <div className={style.activeBar}></div>}
+            </div>
+        </div>
     );
 };
 
