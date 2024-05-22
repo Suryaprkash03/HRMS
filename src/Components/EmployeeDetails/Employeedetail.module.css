@@ -1,0 +1,176 @@
+.card {
+    width: 79%;
+    height: 40%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 70px;
+    margin-top: 30px;
+    background-color: #fff;
+}
+
+.card_header {
+    background: linear-gradient(90deg, hsla(190, 68%, 50%, 1) 0%, hsla(239, 34%, 47%, 1) 100%);    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 40px;
+}
+
+
+.card_content {
+    margin-left: 250px;
+    margin-top: -150px;
+    padding: 30px;
+    
+}
+
+.searchIcon
+{
+    margin-left: 30px;
+}
+.profile
+{
+    width: 100px;
+    height: 100px;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+.icon
+{
+    padding-right:25px ;
+    color: #0056b3;
+    font-size: 18px;
+}
+.rows
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: -10px;
+    color: rgba(29, 29, 29, 0.718);
+    font-size: 16px;
+    font-weight: 500;
+}
+.empname
+{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+.card1 {
+    width:45%;
+    height: 35%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 70px;
+    margin-top: 30px;
+    background-color: #fff;
+}
+
+
+.card_content1 {
+    margin-left: 30px;
+    margin-top: 10px;    
+}
+.rows1
+{
+    padding-top: 40px;
+    margin-top: -20px;
+    color: #000000;
+    font-size: 16px;
+    margin-left: 80px;
+    border-bottom: 2px solid rgb(211, 211, 211);
+    padding-bottom: 30px;
+}
+.colunm
+{
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: -50px;
+}
+.colunm1
+{
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 700;
+}
+@media (max-width: 768px) {
+    .card, .card1 {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .card_content, .card_content1 {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+    .profile {
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .rows, .rows1 {
+        font-size: 14px;
+        padding-top: 20px;
+        margin-top: -10px;
+    }
+
+    .empname {
+        font-size: 14px;
+    }
+
+    .colunm, .colunm1 {
+        font-size: 14px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card, .card1 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card_header {
+        font-size: 16px;
+        padding-left: 20px;
+    }
+
+    .card_content, .card_content1 {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        padding: 20px;
+    }
+
+    .profile {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .rows, .rows1 {
+        font-size: 12px;
+        padding-top: 10px;
+        margin-top: -5px;
+    }
+
+    .empname {
+        font-size: 12px;
+    }
+
+    .colunm, .colunm1 {
+        font-size: 12px;
+        margin-left: 0;
+    }
+}

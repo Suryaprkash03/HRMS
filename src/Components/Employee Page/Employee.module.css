@@ -3,11 +3,11 @@
     position: relative;
     width: 80%;
     margin: 50px auto;
-    overflow: hidden;
+    
 }
 
 .searchbar {
-    width: 100%;
+    width: 95%;
     padding: 15px;
     background-color: rgba(172, 229, 241, 0.447);
     border-radius: 10px;
@@ -22,7 +22,7 @@
     color: #5c5c5c;
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 30px;
     transform: translateY(-50%);
     font-size: 17px;
 }
@@ -31,7 +31,8 @@
     width: 80%;
     margin: 20px auto;
     border-collapse: separate;
-    border-spacing: 0 10px; /* Add space between rows */
+    border-spacing: 0 10px;
+    /* Add space between rows */
 }
 
 .table thead {
@@ -47,7 +48,8 @@
 .table tbody>tr {
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Add subtle shadow */
     position: relative;
     overflow: hidden;
 }
@@ -83,6 +85,12 @@
     height: 40px;
     border-radius: 50%;
     vertical-align: middle;
+    margin-right: 10px;
+
+}
+.ename
+{
+    color: #8c8c8c;
 }
 
 .jt {
@@ -128,11 +136,12 @@ td:last-child .line {
         font-size: 14px;
         padding: 10px;
         padding-left: 35px;
+        margin-right: 50px;
     }
 
     .searchIcon {
         font-size: 14px;
-        margin-top: 50%;
+        
     }
 
     .table {
@@ -140,13 +149,16 @@ td:last-child .line {
     }
 
     .table thead {
-        display: none; /* Hide the header on smaller screens */
+        display: none;
+        /* Hide the header on smaller screens */
     }
 
     .table tbody>tr {
         display: block;
-        margin-bottom: 20px; /* Add space between rows */
-        border-radius: 10px; /* Ensure rows have rounded corners on small screens */
+        margin-bottom: 20px;
+        /* Add space between rows */
+        border-radius: 10px;
+        /* Ensure rows have rounded corners on small screens */
     }
 
     .table tbody>tr td {
@@ -155,7 +167,8 @@ td:last-child .line {
         padding-left: 50%;
         position: relative;
         padding: 10px 5px;
-        border-radius: 0; /* Remove border-radius for individual cells */
+        border-radius: 0;
+        /* Remove border-radius for individual cells */
     }
 
     .table tbody>tr td:first-child {
@@ -175,7 +188,8 @@ td:last-child .line {
     }
 
     .table tbody>tr td:first-child:before {
-        display: none; /* Hide the label for the first cell */
+        display: none;
+        
     }
 
     .profile {
@@ -183,7 +197,8 @@ td:last-child .line {
         height: 30px;
         margin-right: 10px;
     }
-    .line{
+
+    .line {
         display: none !important;
     }
 }
@@ -215,4 +230,12 @@ td:last-child .line {
         width: 25px;
         height: 25px;
     }
+}
+
+.rowLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
 }

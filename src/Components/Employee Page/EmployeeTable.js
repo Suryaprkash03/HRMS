@@ -1,46 +1,11 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { EmployeeContext } from '../../context/EmployeeContext';
 import Style from './Employee.module.css';
 
 const EmployeeTable = () => {
-    const [employees, setEmployees] = useState([
-        {
-            id: 1000,
-            employeeName: "Jerry Tomphson",
-            jobTitle: "Marketing Assistant",
-            salary: "2500 $",
-            hireDate: "14.03.2022",
-            contract: "Permanent",
-            profile: '/assets/profile.svg'
-        },
-        {
-            id: 1001,
-            employeeName: "Jerry Tomphson",
-            jobTitle: "Marketing Assistant",
-            salary: "2500 $",
-            hireDate: "14.03.2022",
-            contract: "Permanent",
-            profile: '/assets/profile.svg'
-        },
-        {
-            id: 1002,
-            employeeName: "Jerry Tomphson",
-            jobTitle: "Marketing Assistant",
-            salary: "2500 $",
-            hireDate: "14.03.2022",
-            contract: "Permanent",
-            profile: '/assets/profile.svg'
-        },
-        {
-            id: 1003,
-            employeeName: "Jerry Tomphson",
-            jobTitle: "Marketing Assistant",
-            salary: "2500 $",
-            hireDate: "14.03.2022",
-            contract: "Permanent",
-            profile: '/assets/profile.svg'
-        },
-    ]);
+    const { employees } = useContext(EmployeeContext);
 
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -77,14 +42,32 @@ const EmployeeTable = () => {
                     {filteredEmployees.map((employee) => (
                         <tr key={employee.id} className={Style.trow}>
                             <td className={Style.ename}>
-                                <img src={employee.profile} alt="employee" className={Style.profile} />
-                                {employee.employeeName}
-                                <div className={Style.line}></div>
+                                <Link to={`/employee/${employee.id}`} className={Style.rowLink}>
+                                    <img src={employee.profile} alt="employee" className={Style.profile} />
+                                    {employee.employeeName}
+                                    <div className={Style.line}></div>
+                                </Link>
                             </td>
-                            <td className={Style.jt}>{employee.jobTitle}<div className={Style.line}></div></td>
-                            <td className={Style.salary}>{employee.salary}<div className={Style.line}></div></td>
-                            <td className={Style.hd}>{employee.hireDate}<div className={Style.line}></div></td>
-                            <td>{employee.contract}</td>
+                            <td className={Style.jt}>
+                                <Link to={`/employee/${employee.id}`} className={Style.rowLink}>
+                                    {employee.jobTitle}
+                                    <div className={Style.line}></div>
+                                </Link>
+                            </td>
+                            <td className={Style.salary}>
+                                <Link to={`/employee/${employee.id}`} className={Style.rowLink}>
+                                    {employee.salary}
+                                    <div className={Style.line}></div>
+                                </Link>
+                            </td>
+                            <td className={Style.hd}>
+                                <Link to={`/employee/${employee.id}`} className={Style.rowLink}>
+                                    {employee.hireDate}
+                                    <div className={Style.line}></div>
+                                </Link>
+                            </td>
+                            <td>{employee.contract}
+                            </td>
                         </tr>
                     ))}
                 </tbody>

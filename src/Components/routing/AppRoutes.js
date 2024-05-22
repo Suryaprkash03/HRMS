@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import App from '../../App';
 import EmployeeTable from '../Employee Page/EmployeeTable';
+import EmployeeDetails from '../EmployeeDetails/EmployeeDetails';
 import Home from '../home/Home';
 import Maintenence from '../maintenance/Maintenence';
 import Documents from '../documents/Documents';
@@ -30,6 +31,8 @@ const AppRoutes = () => {
             <Route path='/Reports'>
                 <Route index element={<Maintenence  name={"Reports"}/>}/>
             </Route>
+            <Route path="/" element={<EmployeeTable />} />
+            <Route path="/employee/:id" element={<EmployeeDetails />} />
         </Routes>
     );
 };

@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Login from './Components/login/Login';
-import SideBar from './Components/sidebar/SideBar';
-import AppRoutes from './Components/routing/AppRoutes';
-import DataContext, { DataProvider } from './context/DataContext';
-import Header from './Components/header/Header';
 import './App.css'; // Import the CSS for styling
+import Header from './Components/header/Header';
+import Login from './Components/login/Login';
+import AppRoutes from './Components/routing/AppRoutes';
+import SideBar from './Components/sidebar/SideBar';
+import DataContext, { DataProvider } from './context/DataContext';
+import { EmployeeProvider } from './context/EmployeeContext';
 
 function App() {
   const { login, setLogin } = useContext(DataContext);
@@ -36,7 +36,9 @@ function App() {
 
 const AppWrapper = () => (
   <DataProvider>
+    <EmployeeProvider>
       <App />
+      </EmployeeProvider>
   </DataProvider>
 );
 
