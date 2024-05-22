@@ -6,8 +6,8 @@ const EmployeeProvider = ({ children }) => {
     const [employees, setEmployees] = useState([
         {
             id: 1000,
-            employeeName: "King Tomphson",
-            jobTitle: " Middle Marketing Assistant",
+            employeeName: "mohammad Shihabudeen",
+            jobTitle: "FrontEnd Developer",
             salary: "2500 $",
             hireDate: "14.03.2022",
             contract: "Permanent",
@@ -18,12 +18,12 @@ const EmployeeProvider = ({ children }) => {
             dob:"10.03.1999",
             country:"India",
             phone:"9876543210",
-            department:"Marketing"
+            department:"Development"
         },
         {
             id: 1001,
-            employeeName: "Jerry Tomphson",
-            jobTitle: "Marketing Assistant",
+            employeeName: "Suryaprakash R",
+            jobTitle: "FrontEnd Developer",
             salary: "2500 $",
             hireDate: "14.03.2022",
             contract: "Permanent",
@@ -38,7 +38,7 @@ const EmployeeProvider = ({ children }) => {
         },
         {
             id: 1002,
-            employeeName: "Jerry Tomphson",
+            employeeName: "VigneshKumar S",
             jobTitle: "Marketing Assistant",
             salary: "2500 $",
             hireDate: "14.03.2022",
@@ -54,7 +54,23 @@ const EmployeeProvider = ({ children }) => {
         },
         {
             id: 1003,
-            employeeName: "Suryaprakash",
+            employeeName: "Mohanprasath S",
+            jobTitle: "Software Engineer",
+            salary: "2500 $",
+            hireDate: "14.03.2022",
+            contract: "Permanent",
+            profile: '/assets/profile.svg',
+            marriedStatus:"Single",
+            degree:"Bachelor of Engineering",
+            location:"Chennai",
+            dob:"10.03.1999",
+            country:"India",
+            phone:"9876543210",
+            department:"Marketing"
+        },
+        {
+            id: 1004,
+            employeeName: "Prakash N",
             jobTitle: "Software Engineer",
             salary: "2500 $",
             hireDate: "14.03.2022",
