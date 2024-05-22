@@ -6,49 +6,40 @@ const EmployeeTable = () => {
     const [employees, setEmployees] = useState([
         {
             id: 1000,
-            employeeName: "John Thampshon",
-            jobTitle: "Software Engineer",
+            employeeName: "Jerry Tomphson",
+            jobTitle: "Marketing Assistant",
             salary: "2500 $",
-            hireDate: "10-10-2023",
+            hireDate: "14.03.2022",
             contract: "Permanent",
             profile: '/assets/profile.svg'
         },
         {
             id: 1001,
-            employeeName: "Thomsan William",
-            jobTitle: "Software Engineer",
+            employeeName: "Jerry Tomphson",
+            jobTitle: "Marketing Assistant",
             salary: "2500 $",
-            hireDate: "10-10-2023",
+            hireDate: "14.03.2022",
             contract: "Permanent",
             profile: '/assets/profile.svg'
         },
         {
             id: 1002,
-            employeeName: "Jonny Joe",
-            jobTitle: "Software Engineer",
+            employeeName: "Jerry Tomphson",
+            jobTitle: "Marketing Assistant",
             salary: "2500 $",
-            hireDate: "10-10-2023",
+            hireDate: "14.03.2022",
             contract: "Permanent",
             profile: '/assets/profile.svg'
         },
         {
             id: 1003,
-            employeeName: " Rose Marry",
-            jobTitle: "Software Engineer",
+            employeeName: "Jerry Tomphson",
+            jobTitle: "Marketing Assistant",
             salary: "2500 $",
-            hireDate: "10-10-2023",
+            hireDate: "14.03.2022",
             contract: "Permanent",
             profile: '/assets/profile.svg'
         },
-        {
-            id: 1004,
-            employeeName: "Alva Edition",
-            jobTitle: "Software Engineer",
-            salary: "2500 $",
-            hireDate: "10-10-2023",
-            contract: "Permanent",
-            profile: '/assets/profile.svg'
-        }
     ]);
 
     const [searchQuery, setSearchQuery] = useState("");
@@ -75,14 +66,14 @@ const EmployeeTable = () => {
             <table className={Style.table}>
                 <thead>
                     <tr>
-                        <th>Employee's Name</th>
+                        <th>Employee's name</th>
                         <th>Job Title</th>
                         <th>Salary</th>
-                        <th>Hire Date</th>
+                        <th>Hire date</th>
                         <th>Contract</th>
                     </tr>
                 </thead>
-                <tbody className={Style.tb}>
+                <tbody>
                     {filteredEmployees.map((employee) => (
                         <tr key={employee.id} className={Style.trow}>
                             <td className={Style.ename}>
@@ -90,14 +81,10 @@ const EmployeeTable = () => {
                                 {employee.employeeName}
                                 <div className={Style.line}></div>
                             </td>
-                            <td className={Style.jt}>{employee.jobTitle}
-                                <div className={Style.line}></div></td>
-                            <td className={Style.salary}>{employee.salary}
-                                <div className={Style.line}></div></td>
-                            <td className={Style.hd}>{employee.hireDate}
-                                <div className={Style.line}></div></td>
-                            <td>{employee.contract}
-                            </td>
+                            <td className={Style.jt}>{employee.jobTitle}<div className={Style.line}></div></td>
+                            <td className={Style.salary}>{employee.salary}<div className={Style.line}></div></td>
+                            <td className={Style.hd}>{employee.hireDate}<div className={Style.line}></div></td>
+                            <td>{employee.contract}</td>
                         </tr>
                     ))}
                 </tbody>
