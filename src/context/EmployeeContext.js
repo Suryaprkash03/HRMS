@@ -6,7 +6,7 @@ const EmployeeProvider = ({ children }) => {
     const [employees, setEmployees] = useState([
         {
             id: 1000,
-            employeeName: "Jerry Tomphson",
+            employeeName: "King Tomphson",
             jobTitle: " Middle Marketing Assistant",
             salary: "2500 $",
             hireDate: "14.03.2022",
@@ -54,7 +54,7 @@ const EmployeeProvider = ({ children }) => {
         },
         {
             id: 1003,
-            employeeName: "Rose Marry",
+            employeeName: "Suryaprakash",
             jobTitle: "Software Engineer",
             salary: "2500 $",
             hireDate: "14.03.2022",
