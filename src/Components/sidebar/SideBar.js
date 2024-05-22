@@ -92,7 +92,7 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
                             <div className={style.itemIcon}>
                                 <svg
                                     stroke="currentColor"
-                                    fill={location.pathname === '/' + item.name ? "url(#grad1)" : '#3a3a3a'}
+                                    fill={location.pathname.includes('/' + item.name) ? "url(#grad1)" : '#3a3a3a'}
                                     strokeWidth="0"
                                     viewBox={item.viewBox}
                                     height="18px"
@@ -110,10 +110,10 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
                                     ))}
                                 </svg>
                             </div>
-                            <p className={`${style.itemText} ps-2 ${location.pathname === '/' + item.name ? style.activeText : ''}`}>
+                            <p className={`${style.itemText} ps-2 ${location.pathname.includes('/' + item.name) ? style.activeText : ''}`}>
                                 {item.name}
                             </p>
-                            {location.pathname === '/' + item.name && <div className={style.activeBar}></div>}
+                            {location.pathname.includes('/' + item.name) && <div className={style.activeBar}></div>}
                         </div>
                     </Link>
                 ))}

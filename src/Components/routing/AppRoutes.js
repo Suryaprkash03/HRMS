@@ -4,6 +4,10 @@ import App from '../../App';
 import EmployeeTable from '../Employee Page/EmployeeTable';
 import Home from '../home/Home';
 import Maintenence from '../maintenance/Maintenence';
+import Documents from '../documents/Documents';
+import Education from '../documents/Education';
+import Experience from '../documents/Experience';
+import Certificates from '../documents/Certificates';
 const AppRoutes = () => {
     return (
         <Routes>
@@ -13,6 +17,12 @@ const AppRoutes = () => {
             </Route>
             <Route path='/Employees'>
                 <Route index element={<EmployeeTable/>} />                
+            </Route>
+            <Route path='Documents'>
+                <Route index element={<Documents/>} />
+                <Route path='Education' element={<Education />}/>  
+                <Route path='Experience' element={<Experience/>}/>
+                <Route path='Certificates' element ={<Certificates/>}/>             
             </Route>
             <Route path='/Performance'>
                 <Route index element={<Maintenence  name={"Performance"}/>}/>

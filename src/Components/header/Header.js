@@ -6,7 +6,7 @@ import { IoMdMailUnread } from "react-icons/io";
 import DropdownItem from './DropdownItem';
 
 const profiles = [
-    { profileImage: './assets/LogoMain.png', name: 'Saravanan', position: 'Software Engineer' },
+    { profileImage: './assets/user.jpg', name: 'Saravanan', position: 'Software Engineer' },
     { profileImage: './assets/LogoMain.png', name: 'Jane Smith', position: 'Product Manager' }
     // Add more profiles as needed
 ];

@@ -27,12 +27,13 @@
   padding-top: 10px;
   padding-left: 10px; 
   padding-bottom: 10px;
-}
+  }
 
 .toggleButton button {
   background-color: white;
   border: 0px;
   color: gray;
+  cursor: pointer;
 }
 
 .toggleButton button svg {
