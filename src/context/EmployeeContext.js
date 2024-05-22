@@ -86,7 +86,7 @@ const EmployeeProvider = ({ children }) => {
         },
     ]);
     return (
-        <EmployeeContext.Provider value={{ employees }}>
+        <EmployeeContext.Provider value={{ employees, setEmployees }}>
             {children}
         </EmployeeContext.Provider>
     );

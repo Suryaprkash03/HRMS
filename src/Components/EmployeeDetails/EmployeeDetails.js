@@ -1,13 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { EmployeeContext } from '../../context/EmployeeContext';
 import Style from './Employeedetail.module.css';
 
-
 const EmployeeDetail = () => {
     const { id } = useParams();
-    const { employees } = useContext(EmployeeContext);
+    const { employees, setEmployees } = useContext(EmployeeContext);
     const employee = employees.find(emp => emp.id === parseInt(id));
+    
+    const [isEditingPersonal, setIsEditingPersonal] = useState(false);
+    const [isEditingEmployment, setIsEditingEmployment] = useState(false);
+    const [updatedEmployee, setUpdatedEmployee] = useState(employee);
+
     if (!employee) {
         return (
             <div>
@@ -16,81 +20,188 @@ const EmployeeDetail = () => {
             </div>
         );
     }
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setUpdatedEmployee({ ...updatedEmployee, [name]: value });
+    };
+
+    const handlePersonalEditToggle = () => {
+        setIsEditingPersonal(!isEditingPersonal);
+    };
+
+    const handleEmploymentEditToggle = () => {
+        setIsEditingEmployment(!isEditingEmployment);
+    };
+
+    const handleSave = () => {
+        const updatedEmployees = employees.map(emp =>
+            emp.id === updatedEmployee.id ? updatedEmployee : emp
+        );
+        setEmployees(updatedEmployees);
+        setIsEditingPersonal(false);
+        setIsEditingEmployment(false);
+    };
+
     return (
         <>
-            <div class={Style.card}>
-                <div class={Style.card_header}>
-                    Personal details <i className={`fa fa-pencil ${Style.searchIcon}`} ></i>
+            <div className={Style.card}>
+                <div className={Style.card_header}>
+                    Personal details <i className={`fa fa-pencil ${Style.searchIcon}`} onClick={handlePersonalEditToggle}></i>
                 </div>
-                <div class={Style.card_body}>
+                <div className={Style.card_body}>
                     <div>
                         <img src={employee.profile} alt="Profile" className={Style.profile} />
                     </div>
-                    <div class={Style.card_content}>
-                        <div class={`row ${Style.rows}`}>
-                            <div class={`col-4 ${Style.empname}`}>
-                            <i className={`fa fa-mars ${Style.icon}`}></i>
-                            {employee.employeeName}
+                    <div className={Style.card_content}>
+                        <div className={`row ${Style.rows}`}>
+                            <div className={`col-4 ${Style.empname}`}>
+                                <i className={`fa fa-mars ${Style.icon}`}></i>
+                                {isEditingPersonal ? (
+                                    <input
+                                        type="text"
+                                        name="employeeName"
+                                        value={updatedEmployee.employeeName}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.employeeName
+                                )}
                             </div>
-                            <div class="col-4">
-                            <i className={`fa fa-male ${Style.icon}`}></i>
-                            {employee.marriedStatus}
+                            <div className="col-4">
+                                <i className={`fa fa-male ${Style.icon}`}></i>
+                                {isEditingPersonal ? (
+                                    <input
+                                        type="text"
+                                        name="marriedStatus"
+                                        value={updatedEmployee.marriedStatus}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.marriedStatus
+                                )}
                             </div>
-                            <div class="col-4">
-                            <i className={`fa fa-graduation-cap ${Style.icon}`}></i>
-                            {employee.degree}
+                            <div className="col-4">
+                                <i className={`fa fa-graduation-cap ${Style.icon}`}></i>
+                                {isEditingPersonal ? (
+                                    <input
+                                        type="text"
+                                        name="degree"
+                                        value={updatedEmployee.degree}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.degree
+                                )}
                             </div>
                         </div>
-                        <div class={`row ${Style.rows}`}>
-                            <div class="col-4">
-                            <i className={`fa fa-map-marker ${Style.icon}`}></i>
-                            {employee.location}
+                        <div className={`row ${Style.rows}`}>
+                            <div className="col-4">
+                                <i className={`fa fa-map-marker ${Style.icon}`}></i>
+                                {isEditingPersonal ? (
+                                    <input
+                                        type="text"
+                                        name="location"
+                                        value={updatedEmployee.location}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.location
+                                )}
                             </div>
-                            <div class="col-4">
-                            <i className={`fa fa-birthday-cake ${Style.icon}`}></i>
-                            {employee.dob}
+                            <div className="col-4">
+                                <i className={`fa fa-birthday-cake ${Style.icon}`}></i>
+                                {isEditingPersonal ? (
+                                    <input
+                                        type="text"
+                                        name="dob"
+                                        value={updatedEmployee.dob}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.dob
+                                )}
                             </div>
-                            <div class="col-4">
-                            <i className={`fa fa-shield ${Style.icon}`}></i>
-                            {employee.country}
+                            <div className="col-4">
+                                <i className={`fa fa-shield ${Style.icon}`}></i>
+                                {isEditingPersonal ? (
+                                    <input
+                                        type="text"
+                                        name="country"
+                                        value={updatedEmployee.country}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.country
+                                )}
                             </div>
                         </div>
-                        <div class={`row ${Style.rows}`}>
-                            <div class="col-4">
-                            <i className={`fa fa-phone ${Style.icon}`}></i>
-                            {employee.phone}
+                        <div className={`row ${Style.rows}`}>
+                            <div className="col-4">
+                                <i className={`fa fa-phone ${Style.icon}`}></i>
+                                {isEditingPersonal ? (
+                                    <input
+                                        type="text"
+                                        name="phone"
+                                        value={updatedEmployee.phone}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.phone
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class={Style.card1}>
-                <div class={Style.card_header }>
-                    Employment details <i className={`fa fa-pencil ${Style.searchIcon}`} ></i>
+            <div className={Style.card1}>
+                <div className={Style.card_header}>
+                    Employment details <i className={`fa fa-pencil ${Style.searchIcon}`} onClick={handleEmploymentEditToggle}></i>
                 </div>
-                <div class={Style.card_body}>
-                    <div class={Style.card_content1}>
-                        <div class={`row ${Style.rows1}`}>
-                            <div class={`col-6 ${Style.colunm}`}>
-                            <i className={`fa fa-briefcase ${Style.icon}`}></i>
-                            Job Title
+                <div className={Style.card_body}>
+                    <div className={Style.card_content1}>
+                        <div className={`row ${Style.rows1}`}>
+                            <div className={`col-6 ${Style.colunm}`}>
+                                <i className={`fa fa-briefcase ${Style.icon}`}></i>
+                                Job Title
                             </div>
-                            <div class={`col-6 ${Style.colunm1}`}>
-                            {employee.jobTitle}
+                            <div className={`col-6 ${Style.colunm1}`}>
+                                {isEditingEmployment ? (
+                                    <input
+                                        type="text"
+                                        name="jobTitle"
+                                        value={updatedEmployee.jobTitle}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.jobTitle
+                                )}
                             </div>
                         </div>
-                        <div class={`row ${Style.rows1}`}>
-                            <div  class={`col-6 ${Style.colunm}`}>
-                            <i className={`fa fa-users ${Style.icon}`}></i>
-                            Departments
+                        <div className={`row ${Style.rows1}`}>
+                            <div className={`col-6 ${Style.colunm}`}>
+                                <i className={`fa fa-users ${Style.icon}`}></i>
+                                Departments
                             </div>
-                            <div class={`col-6 ${Style.colunm1}`}>
-                            {employee.department}
+                            <div className={`col-6 ${Style.colunm1}`}>
+                                {isEditingEmployment ? (
+                                    <input
+                                        type="text"
+                                        name="department"
+                                        value={updatedEmployee.department}
+                                        onChange={handleInputChange}
+                                    />
+                                ) : (
+                                    employee.department
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {(isEditingPersonal || isEditingEmployment) && (
+                <button onClick={handleSave} className={Style.saveButton}>Save</button>
+            )}
         </>
     );
 };
