@@ -42,26 +42,26 @@ const EmployeeTable = () => {
                     {filteredEmployees.map((employee) => (
                         <tr key={employee.id} className={Style.trow}>
                             <td className={Style.ename}>
-                                <Link to={`/employee/${employee.id}`} className={Style.rowLink}>
+                                <Link to={`/Employees/${employee.id}`} className={Style.rowLink}>
                                     <img src={employee.profile} alt="employee" className={Style.profile} />
                                     {employee.employeeName}
                                     <div className={Style.line}></div>
                                 </Link>
                             </td>
                             <td className={Style.jt}>
-                                <Link to={`/employee/${employee.id}`} className={Style.rowLink}>
+                                <Link to={`/Employees/${employee.id}`} className={Style.rowLink}>
                                     {employee.jobTitle}
                                     <div className={Style.line}></div>
                                 </Link>
                             </td>
                             <td className={Style.salary}>
-                                <Link to={`/employee/${employee.id}`} className={Style.rowLink}>
+                                <Link to={`/Employees/${employee.id}`} className={Style.rowLink}>
                                     {employee.salary}
                                     <div className={Style.line}></div>
                                 </Link>
                             </td>
                             <td className={Style.hd}>
-                                <Link to={`/employee/${employee.id}`} className={Style.rowLink}>
+                                <Link to={`/Employees/${employee.id}`} className={Style.rowLink}>
                                     {employee.hireDate}
                                     <div className={Style.line}></div>
                                 </Link>

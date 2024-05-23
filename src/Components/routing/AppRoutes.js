@@ -9,6 +9,7 @@ import Documents from '../documents/Documents';
 import Education from '../documents/Education';
 import Experience from '../documents/Experience';
 import Certificates from '../documents/Certificates';
+import Attendance from '../attendance/Attendance';
 const AppRoutes = () => {
     return (
         <Routes>
@@ -25,6 +26,9 @@ const AppRoutes = () => {
                 <Route path='Experience' element={<Experience/>}/>
                 <Route path='Certificates' element ={<Certificates/>}/>             
             </Route>
+            <Route path='/Attendance'>
+                <Route index element={<Attendance />} />                
+            </Route>
             <Route path='/Performance'>
                 <Route index element={<Maintenence  name={"Performance"}/>}/>
             </Route>
@@ -32,7 +36,7 @@ const AppRoutes = () => {
                 <Route index element={<Maintenence  name={"Reports"}/>}/>
             </Route>
             <Route path="/" element={<EmployeeTable />} />
-            <Route path="/employee/:id" element={<EmployeeDetails />} />
+            <Route path="/Employees/:id" element={<EmployeeDetails />} />
         </Routes>
     );
 };
