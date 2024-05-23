@@ -1,5 +1,5 @@
 .card {
-    width: 79%;
+    width: 90%;
     height: 40%;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -81,8 +81,10 @@
     color: #000000;
     font-size: 16px;
     margin-left: 80px;
-    border-bottom: 2px solid rgb(211, 211, 211);
     padding-bottom: 30px;
+}
+.rowborder{
+    border-bottom: 2px solid rgb(211, 211, 211);
 }
 .colunm
 {

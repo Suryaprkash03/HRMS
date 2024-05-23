@@ -158,12 +158,12 @@ const EmployeeDetail = () => {
                 <div className={Style.card_header}>
                     Employment details <i className={`fa fa-pencil ${Style.searchIcon}`} onClick={handleEmploymentEditToggle}></i>
                 </div>
-                <div className={Style.card_body}>
-                    <div className={Style.card_content1}>
-                        <div className={`row ${Style.rows1}`}>
-                            <div className={`col-6 ${Style.colunm}`}>
-                                <i className={`fa fa-briefcase ${Style.icon}`}></i>
-                                Job Title
+                <div class={Style.card_body}>
+                    <div class={Style.card_content1}>
+                        <div class={`row ${Style.rowborder} ${Style.rows1} `}>
+                            <div class={`col-6 ${Style.colunm}`}>
+                            <i className={`fa fa-briefcase ${Style.icon}`}></i>
+                            Job Title
                             </div>
                             <div className={`col-6 ${Style.colunm1}`}>
                                 {isEditingEmployment ? (
