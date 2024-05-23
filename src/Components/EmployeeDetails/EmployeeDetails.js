@@ -48,6 +48,8 @@ const EmployeeDetail = () => {
             <div className={Style.card}>
                 <div className={Style.card_header}>
                     Personal details <i className={`fa fa-pencil ${Style.searchIcon}`} onClick={handlePersonalEditToggle}></i>
+                    {(isEditingPersonal ) && (
+                        <i className={`fa fa-save ${Style.save}`} onClick={handleSave}></i>            )}
                 </div>
                 <div className={Style.card_body}>
                     <div>
@@ -59,6 +61,7 @@ const EmployeeDetail = () => {
                                 <i className={`fa fa-mars ${Style.icon}`}></i>
                                 {isEditingPersonal ? (
                                     <input
+                                        className={Style.input}
                                         type="text"
                                         name="employeeName"
                                         value={updatedEmployee.employeeName}
@@ -157,6 +160,9 @@ const EmployeeDetail = () => {
             <div className={Style.card1}>
                 <div className={Style.card_header}>
                     Employment details <i className={`fa fa-pencil ${Style.searchIcon}`} onClick={handleEmploymentEditToggle}></i>
+                    {(isEditingEmployment ) && (
+                <i className={`fa fa-save ${Style.save}`} onClick={handleSave} ></i>
+            )}
                 </div>
                 <div class={Style.card_body}>
                     <div class={Style.card_content1}>
@@ -199,9 +205,9 @@ const EmployeeDetail = () => {
                     </div>
                 </div>
             </div>
-            {(isEditingPersonal || isEditingEmployment) && (
+            {/* {(isEditingPersonal || isEditingEmployment) && (
                 <button onClick={handleSave} className={Style.saveButton}>Save</button>
-            )}
+            )} */}
         </>
     );
 };

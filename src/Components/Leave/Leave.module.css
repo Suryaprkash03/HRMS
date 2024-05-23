@@ -1,0 +1,133 @@
+.container {
+    font-family: Arial, sans-serif;
+    width: 80%;
+    background-color: #faf9f9ae;
+    margin-left: 80px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 35px rgb(175, 175, 175);
+    padding: 10px;
+    
+}
+/* .header
+{
+    background: linear-gradient(90deg, hsla(190, 68%, 50%, 1) 0%, hsla(239, 34%, 47%, 1) 100%);    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 50px;
+    padding-left: 30px;
+    color: white;
+    
+}
+.header h2{
+    padding-top: 8px;
+} */
+
+.leave_form div {
+    margin-bottom: 5px;
+}
+
+.leave_form label {
+    display: block;
+    margin-bottom: 7px;
+    margin-left: 40px;
+    color:rgb(0, 0, 0);
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 10px;
+
+}
+.datePickerContainer
+{
+    padding-top: 5px;
+    margin-left: 30px;
+}
+
+
+.datePickerInput {
+    width: 350px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    padding-left: 10px;
+    color:#545454;
+}
+.Input
+{
+    width: 360px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left:30px ;
+    margin-top: 5px;
+    padding-left: 10px;
+    color:#545454;
+    outline: none;
+
+}
+.textarea
+{
+    width: 360px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 30px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 16px;
+    color:#545454;
+
+}
+.arealabel
+{
+    padding-top: 1px;
+}
+
+.buttons button
+{
+    background-color: blue;
+    color: white;
+    height: 30px;
+    width: 50px;
+    margin: 10px;
+    margin-left: 33px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.buttons button:hover
+{
+    background-color: rgb(15, 15, 170);
+    color: white;
+}
+.required
+{
+    color: red;
+    padding: 2px;
+}
+.error
+{
+    color: red;
+    margin-left: 30px;
+    padding-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        margin-bottom: 10px;
+    }
+}
