@@ -35,6 +35,12 @@ const Leave = () => {
         }
 
         if (formRef.current.checkValidity()) {
+            console.log('From Date:', fromDate);
+            console.log('To Date:', toDate);
+            console.log('Number of Days:', days);
+            console.log('Day Type:', fullDay);
+            console.log('Leave Reason:', reason);
+
             alert('Form Submitted!');
             handleReset();
         } else {
@@ -52,9 +58,6 @@ const Leave = () => {
 
     return (
         <div className={style.container}>
-            {/* <div className={style.header}>
-                <h2>Leave Request</h2>
-            </div> */}
             <form ref={formRef} onSubmit={handleAdd} className={`${style.leave_form}`} noValidate>
                 <div className='row'>
                     <div className='col-6'>
@@ -131,7 +134,6 @@ const Leave = () => {
                             required
                             className={style.textarea}
                         />
-                        
                     </div>
                 </div>
                 <div className={style.buttons}>
