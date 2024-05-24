@@ -136,6 +136,7 @@
     background: transparent;
     transition: color 0.3s ease-in-out;
     color: #585858;
+    cursor: pointer;
 }
 .backButton i {
     padding-right:5px ;
