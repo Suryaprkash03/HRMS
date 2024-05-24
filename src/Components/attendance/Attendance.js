@@ -116,7 +116,11 @@ const Attendance = () => {
   };
 
   const handlePreviousMonth = () => {
-    setSelectedMonth(prevMonth => new Date(prevMonth.setMonth(prevMonth.getMonth() - 1)));
+    setSelectedMonth(prevMonth => {
+      const newMonth = new Date(prevMonth);
+      newMonth.setMonth(newMonth.getMonth() - 1);
+      return newMonth;
+    });
   };
 
   const handleCurrentMonth = () => {
