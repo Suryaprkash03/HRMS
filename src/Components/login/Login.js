@@ -1,19 +1,26 @@
-import { useState ,useContext} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useContext, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import style from './Login.module.css';
 import DataContext from '../../context/DataContext';
 
-
-
 const Login = () => {
     const { setLogin } = useContext(DataContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
     const [input, setInput] = useState({ email: '', password: '' });
     const [errorMessage, setErrorMessage] = useState('');
-    const handleChange = e => {
+
+    useEffect(() => {
+        if (location.pathname !== '/Login') {
+            navigate('/Login', { replace: true });
+        }
+    }, [location, navigate]);
+
+    const handleChange = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value });
     };
-    const formSubmitter = e => {
+
+    const formSubmitter = (e) => {
         e.preventDefault();
         if (!input.email) return setErrorMessage('Please enter a valid email ID');
         if (!input.password)
@@ -22,11 +29,10 @@ const Login = () => {
             );
         if (input.email !== 'admin' || input.password !== 'saravanan') return setErrorMessage('Invalid email or password');
         else {
-            navigate('/Home');
             setLogin(true);
+            navigate('/Home');
         }
     };
-
 
     return (
         <div className={style.background_image}>
@@ -35,29 +41,33 @@ const Login = () => {
                     <img src="./assets/Logo.jpg" alt="" className={style.img} />
                 </div>
                 <form onSubmit={formSubmitter}>
-                    {errorMessage.length > 0 && <div style={{ marginBottom: '10px', color: 'red', marginLeft: '30px' }}>{errorMessage}</div>}
-                    <div class={style.user_box}>
+                    {errorMessage.length > 0 && (
+                        <div style={{ marginBottom: '10px', color: 'red', marginLeft: '30px' }}>{errorMessage}</div>
+                    )}
+                    <div className={style.user_box}>
                         <input
                             type="text"
                             name="email"
-                            required=""
+                            required
                             onChange={handleChange}
-                            placeholder='Username'
-                            className={style.input} />
+                            placeholder="Username"
+                            className={style.input}
+                        />
                     </div>
-                    <div class={style.user_box}>
+                    <div className={style.user_box}>
                         <input
                             type="password"
                             name="password"
-                            required=""
+                            required
                             onChange={handleChange}
-                            placeholder='Password'
-                            className={style.input} />
+                            placeholder="Password"
+                            className={style.input}
+                        />
                     </div>
-                    <div >
-                        <button>Login</button>
+                    <div>
+                        <button type="submit">Login</button>
                     </div>
-                    <div >
+                    <div>
                         <a href="#" className={style.a}>Forgot password?</a>
                     </div>
                 </form>

@@ -7,7 +7,6 @@ import style from './Leave.module.css';
 const Leave = () => {
     const [fromDate, setFromDate] = useState(null);
     const [toDate, setToDate] = useState(null);
-    const [days, setDays] = useState('');
     const [fullDay, setFullDay] = useState('');
     const [reason, setReason] = useState('');
     const formRef = useRef(null);
@@ -17,15 +16,11 @@ const Leave = () => {
         { value: 'half', label: 'Half Day' }
     ];
 
-    useEffect(() => {
-        if (fromDate && toDate) {
-            const timeDifference = toDate - fromDate;
-            const dayDifference = timeDifference / (1000 * 3600 * 24);
-            setDays(Math.ceil(dayDifference));
-        } else {
-            setDays('');
-        }
-    }, [fromDate, toDate]);
+    const leaveTypes = [
+        { value: 'Sick', label: 'Sick' },
+        { value: 'Medical', label: 'Medical' },
+        { value: 'Casual', label: 'Casual' }
+    ];
 
     const handleAdd = (e) => {
         e.preventDefault();
@@ -37,7 +32,6 @@ const Leave = () => {
         if (formRef.current.checkValidity()) {
             console.log('From Date:', fromDate);
             console.log('To Date:', toDate);
-            console.log('Number of Days:', days);
             console.log('Day Type:', fullDay);
             console.log('Leave Reason:', reason);
 
@@ -51,7 +45,6 @@ const Leave = () => {
     const handleReset = () => {
         setFromDate(null);
         setToDate(null);
-        setDays('');
         setFullDay('');
         setReason('');
     };
@@ -97,17 +90,7 @@ const Leave = () => {
                 </div>
                 <div className='row'>
                     <div className='col-6'>
-                        <label htmlFor="days">Number of Days:</label>
-                        <input
-                            type="number"
-                            id="days"
-                            value={days}
-                            readOnly
-                            className={style.Input}
-                        />
-                    </div>
-                    <div className='col-6'>
-                        <label htmlFor="fullDay"><span className={style.required}>*</span>Choose day type:</label>
+                        <label htmlFor="fullDay"><span className={style.required}>*</span>Day Type:</label>
                         <select
                             id="fullDay"
                             value={fullDay}
@@ -117,6 +100,23 @@ const Leave = () => {
                         >
                             <option value="">Select</option>
                             {leaveOptions.map(option => (
+                                <option key={option.value} value={option.value} className={style.drop}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className='col-6'>
+                        <label htmlFor="leaveType"><span className={style.required}>*</span>Leave Type:</label>
+                        <select
+                            id="leaveType"
+                            value={reason}
+                            onChange={(e) => setReason(e.target.value)}
+                            required
+                            className={style.Input}
+                        >
+                            <option value="">Select</option>
+                            {leaveTypes.map(option => (
                                 <option key={option.value} value={option.value} className={style.drop}>
                                     {option.label}
                                 </option>
