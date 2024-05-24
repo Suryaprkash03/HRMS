@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import styles from './Documents.module.css';
 
 const Container = styled.div`
@@ -164,7 +165,14 @@ const Experience = () => {
     setExperiences(updatedExperiences);
   };
 
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate('/Documents');
+  };
+
   return (
+    <>
+    <button className={styles.backButton} onClick={handleBack}><i className='fa fa-arrow-left'></i>Back</button>
     <Container>
       <h1>Work Experience Details</h1>
       <AddButton onClick={handleAddExperience}>Add Experience</AddButton>
@@ -227,6 +235,7 @@ const Experience = () => {
         ))}
       </CardContainer>
     </Container>
+    </>
   );
 };
 

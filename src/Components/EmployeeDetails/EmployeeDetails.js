@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { EmployeeContext } from '../../context/EmployeeContext';
 import Style from './Employeedetail.module.css';
 
 const EmployeeDetail = () => {
     const { id } = useParams();
+    const navigate = useNavigate()
     const { employees, setEmployees } = useContext(EmployeeContext);
     const employee = employees.find(emp => emp.id === parseInt(id));
     
@@ -43,13 +44,19 @@ const EmployeeDetail = () => {
         setIsEditingEmployment(false);
     };
 
+    const handleBack = () => {
+        navigate('/Employees');
+    };
+
     return (
         <>
+            <button className={Style.backButton} onClick={handleBack}><i className='fa fa-arrow-left'></i>Back</button>
             <div className={Style.card}>
                 <div className={Style.card_header}>
                     Personal details <i className={`fa fa-pencil ${Style.searchIcon}`} onClick={handlePersonalEditToggle}></i>
-                    {(isEditingPersonal ) && (
-                        <i className={`fa fa-save ${Style.save}`} onClick={handleSave}></i>            )}
+                    {isEditingPersonal && (
+                        <i className={`fa fa-save ${Style.save}`} onClick={handleSave}></i>
+                    )}
                 </div>
                 <div className={Style.card_body}>
                     <div>
@@ -160,16 +167,16 @@ const EmployeeDetail = () => {
             <div className={Style.card1}>
                 <div className={Style.card_header}>
                     Employment details <i className={`fa fa-pencil ${Style.searchIcon}`} onClick={handleEmploymentEditToggle}></i>
-                    {(isEditingEmployment ) && (
-                <i className={`fa fa-save ${Style.save}`} onClick={handleSave} ></i>
-            )}
+                    {isEditingEmployment && (
+                        <i className={`fa fa-save ${Style.save}`} onClick={handleSave}></i>
+                    )}
                 </div>
-                <div class={Style.card_body}>
-                    <div class={Style.card_content1}>
-                        <div class={`row ${Style.rowborder} ${Style.rows1} `}>
-                            <div class={`col-6 ${Style.colunm}`}>
-                            <i className={`fa fa-briefcase ${Style.icon}`}></i>
-                            Job Title
+                <div className={Style.card_body}>
+                    <div className={Style.card_content1}>
+                        <div className={`row ${Style.rowborder} ${Style.rows1}`}>
+                            <div className={`col-6 ${Style.colunm}`}>
+                                <i className={`fa fa-briefcase ${Style.icon}`}></i>
+                                Job Title
                             </div>
                             <div className={`col-6 ${Style.colunm1}`}>
                                 {isEditingEmployment ? (
@@ -205,9 +212,6 @@ const EmployeeDetail = () => {
                     </div>
                 </div>
             </div>
-            {/* {(isEditingPersonal || isEditingEmployment) && (
-                <button onClick={handleSave} className={Style.saveButton}>Save</button>
-            )} */}
         </>
     );
 };

@@ -107,12 +107,14 @@
     border-radius: 4px;
     transition: background-color 0.3s ease-in-out;
     margin-bottom: 10px;
+    
 }
 
 .buttons button:hover
 {
     background-color: rgb(15, 15, 170);
     color: white;
+    
 }
 .required
 {

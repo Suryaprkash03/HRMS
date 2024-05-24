@@ -1,7 +1,8 @@
 // src/App.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import styles from './Documents.module.css'
+import styles from './Documents.module.css';
 const Card = styled.div`
 position: relative;
   background: linear-gradient(90deg, hsla(190, 68%, 50%, 1) 0%, hsla(239, 34%, 47%, 1) 100%);
@@ -65,9 +66,16 @@ const Education = () => {
         console.log(newDetails)
         setDetails(newDetails);
     };
+    const navigate =useNavigate();
+
+    const handleBack = () =>
+        {
+            navigate('/Documents');
+        };
 
     return (
         <div className="conatiner">
+        <button className={styles.backButton} onClick={handleBack}><i className='fa fa-arrow-left'></i>Back</button>
             <h1>Education Details</h1>
             <div className={`${styles.card_container}`}>
                 {Object.keys(details).map(level => (
